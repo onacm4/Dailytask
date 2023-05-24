@@ -1,0 +1,37 @@
+
+python
+Copy code
+import datetime
+
+def track_task(task):
+    timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    with open("task_log.txt", "a") as file:
+        file.write(f"{timestamp}: {task}\n")
+    print("Task tracked successfully!")
+
+def main():
+    print("Welcome to Task Tracker!")
+    while True:
+        task = input("Enter your task (or 'q' to quit): ")
+        if task.lower() == "q":
+            break
+        track_task(task)
+
+if __name__ == "__main__":
+    main()
+Here's how the script works:
+
+It imports the datetime module to get the current timestamp.
+The track_task function takes a task as input, gets the current timestamp, and appends it to a file called "task_log.txt" along with the task description.
+The main function is the entry point of the script. It prompts the user to enter tasks until they choose to quit by entering 'q'.
+Each task entered by the user is passed to the track_task function for tracking.
+The script appends the task and timestamp to the "task_log.txt" file.
+After the task is tracked, it displays a success message.
+The script can be run by executing the main function.
+To use this script:
+
+Copy the script and save it as a Python file (e.g., task_tracker.py).
+Open a terminal or command prompt and navigate to the directory where you saved the file.
+Run the script by entering python task_tracker.py.
+Enter your tasks as prompted. To quit, enter 'q'.
+The tasks will be saved in the "task_log.txt" file in the same directory as the script.
